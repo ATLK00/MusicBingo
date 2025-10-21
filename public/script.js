@@ -44,8 +44,8 @@ function startGame(isHost) {
   document.getElementById("login").style.display = "none";
   document.getElementById("gameArea").style.display = "block";
   document.getElementById("hostInfo").innerText = isHost
-    ? "👑 คุณคือผู้สร้างห้อง"
-    : "🧑‍🤝‍🧑 ผู้เล่นทั่วไป";
+    ? "คุณคือผู้สร้างห้อง"
+    : "ผู้เล่น";
   document.getElementById("randomBtn").style.display = isHost ? "inline" : "none";
   renderBoard();
 }
