@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>🎵 บิงโกดนตรี</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🎶 บิงโกดนตรี</h1>
 
+    <div id="login">
+      <input id="playerName" placeholder="ใส่ชื่อของคุณ">
+      <input id="roomId" placeholder="รหัสห้อง">
+      <button id="createRoom">สร้างห้อง</button>
+      <button id="joinRoom">เข้าห้อง</button>
+    </div>
+
+    <div id="gameArea" style="display:none;">
+      <p id="hostInfo"></p>
+      <button id="randomBtn" style="display:none;">🎲 สุ่มคำ</button>
+      <h2 id="randomWord" class="random-word">รอคำสุ่ม...</h2>
+      <div id="board" class="board"></div>
+      <button id="bingoBtn">🟢 บิงโก!</button>
+      <p id="status"></p>
+    </div>
+  </div>
+</body>
+</html>
