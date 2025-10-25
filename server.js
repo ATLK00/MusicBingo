@@ -11,14 +11,14 @@ app.use(express.static("public"));
 const rooms = {}; // เก็บข้อมูลห้องและ host
 
 io.on("connection", (socket) => {
-  console.log("✅ Connected:", socket.id);
+  console.log("✅ เชื่อมต่อ:", socket.id);
 
   socket.on("createRoom", ({ roomId, name }) => {
     rooms[roomId] = { host: socket.id, players: {}, usedWords: [] };
     rooms[roomId].players[socket.id] = name;
     socket.join(roomId);
     socket.emit("roomCreated", roomId);
-    console.log(`${name} created room ${roomId}`);
+    console.log(`${name} ได้สร้างห้อง ${roomId} แล้ว`);
   });
 
   socket.on("joinRoom", ({ roomId, name }) => {
@@ -68,6 +68,7 @@ io.on("connection", (socket) => {
     }
   });
 });
+
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
