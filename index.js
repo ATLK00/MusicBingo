@@ -1,3 +1,4 @@
+require('dotenv').config();
 // --- 1. Import Library ---
 const { Client, GatewayIntentBits } = require('discord.js');
 const express = require('express');
